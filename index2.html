@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>novatech</title>
+
+<style>
+  /* GLOBAL */
+  *{
+    margin:0; padding:0; box-sizing:border-box;
+    font-family:"Segoe UI", sans-serif;
+  }
+  body{
+    background:url("download (10).jpg") center/cover fixed no-repeat;
+    color:white;
+    scroll-behavior:smooth;
+  }
+  img{ max-width:100%; border-radius:14px; }
+  a{ text-decoration:none; color:white; }
+
+  /* GLASS UTILITY */
+  .glass{
+    background:rgba(255,255,255,.14);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-radius:18px;
+    box-shadow:0 12px 38px rgba(0,0,0,.45);
+  }
+
+  /* NAV */
+  nav{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    padding:14px 50px;
+    display:flex;
+    justify-content:flex-end;
+    gap:30px;
+    z-index:1000;
+  }
+  nav a{
+    padding:8px 16px;
+    border-radius:10px;
+    transition:.3s;
+    font-weight:600;
+  }
+  nav a:hover{
+    background:rgba(255,255,255,.25);
+    transform:scale(1.05);
+  }
+
+  /* HERO */
+  header{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:0 40px;
+  }
+  .hero-box{
+    max-width:760px;
+    padding:50px;
+    text-align:center;
+  }
+  .hero-box h1{
+    font-size:3.3rem;
+    margin-bottom:15px;
+  }
+  .hero-box p{
+    font-size:1.25rem;
+    margin-bottom:30px;
+  }
+  button{
+    padding:14px 32px;
+    background:black;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.35s;
+  }
+  button:hover{
+    background:#555b60;
+    transform:scale(1.05);
+  }
+
+  /* SECTION */
+  section{
+    padding:100px 60px;
+    min-height:80vh;
+  }
+  section h2{
+    text-align:center;
+    font-size:2.2rem;
+    margin-bottom:60px;
+  }
+
+  /* SERVICES GRID */
+  .service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:35px;
+  }
+  .service-card{
+    padding:28px;
+    text-align:center;
+    transition:.3s;
+  }
+  .service-card:hover{
+    transform:translateY(-10px);
+  }
+  .service-card h3{
+    margin:18px 0;
+  }
+
+  /* CONTACT */
+  .contact-area{
+    max-width:700px;
+    margin:auto;
+    padding:40px;
+  }
+  .contact-area input,
+  .contact-area textarea{
+    width:100%;
+    padding:14px;
+    border:none;
+    margin-bottom:18px;
+    border-radius:12px;
+    background:rgba(255,255,255,.2);
+    backdrop-filter:blur(10px);
+    color:white;
+  }
+
+  footer{
+    text-align:center;
+    padding:28px;
+    background:rgba(0,0,0,.45);
+    backdrop-filter:blur(8px);
+  }
+
+  @media(max-width:850px){
+    nav{ justify-content:center; padding:14px 10px; }
+    header .hero-box h1{ font-size:2.5rem; }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="glass">
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<header>
+  <div class="hero-box glass">
+    <h1>NOVATECH</h1>
+    <p>Premium Technology Experiences Delivered with Precision.</p>
+    <button onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+      Explore Services
+    </button>
+  </div>
+</header>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2>Capabilities</h2>
+  <div class="service-grid">
+
+    <div class="service-card glass">
+      <img src="Software Consulting and Development Company.jpg">
+      <h3>Web Applications</h3>
+      <p>Responsive, revenue-focused digital products.</p>
+    </div>
+
+    <div class="service-card glass">
+      <img src="Futuristic side view portrait of young african-american woman wearing vr headset against purple background _ Premium Photo.jpg">
+      <h3>AI & Automation</h3>
+      <p>Predictive pipelines that learn and adapt.</p>
+    </div>
+
+    <div class="service-card glass">
+      <img src="Internet do coisas tecnologia refere para a integrado rede do interligado dispositivos e auxiliar tecnologias_ isto é uma vetor tecnologia ilustração mostrando conexão Informação_.jpg">
+      <h3>Cloud Infrastructure</h3>
+      <p>Zero-downtime scaling across distributed systems.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Partnerships & Queries</h2>
+  <form class="contact-area glass" onsubmit="submitForm(event)">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Email" required>
+    <textarea rows="5" placeholder="Message" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+<footer>
+  © 2025 NOVATECH Technologies
+</footer>
+
+<script>
+function submitForm(e){
+  e.preventDefault();
+  alert("Message received. We’ll respond shortly.");
+  e.target.reset();
+}
+</script>
+
+</body>
+</html>
