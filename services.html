@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaTech | Innovation Simplified</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", system-ui, sans-serif;
+    }
+
+    :root {
+      --glass-bg: rgba(255, 255, 255, 0.08);
+      --glass-border: rgba(255, 255, 255, 0.18);
+      --text-primary: #f2f2f2;
+      --text-muted: #bdbdbd;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #1a1a1a, #0f0f0f 70%);
+      color: var(--text-primary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+      filter: grayscale(100%);
+    }
+
+    .glass-wrapper {
+      width: 90%;
+      max-width: 1100px;
+      padding: 80px 60px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(18px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 5vw, 3.8rem);
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+    }
+
+    .feature {
+      padding: 30px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(14px);
+      transition: transform 0.35s ease, background 0.35s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-6px);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .feature h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .feature p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    footer {
+      margin-top: 70px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #8a8a8a;
+    }
+
+    @media (max-width: 600px) {
+      .glass-wrapper {
+        padding: 60px 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="glass-wrapper">
+
+    <section class="hero">
+      <h1>NovaTech</h1>
+      <p>
+        NovaTech provides technology-driven services focused on system optimization,
+        digital transformation, and performance improvement. We partner with individuals,
+        startups, and organizations to design, build, and refine digital solutions that
+        solve real problems and support long-term growth.
+      </p>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <h3>Digital Solutions Development</h3>
+        <p>
+          We design and develop modern websites, applications, and digital systems that
+          are reliable, scalable, and aligned with real business objectives.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h3>System Optimization & Improvement</h3>
+        <p>
+          Existing systems are analyzed and refined to improve performance, usability,
+          and efficiency — reducing complexity while increasing value.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h3>Technology Consulting & Impact</h3>
+        <p>
+          We provide strategic guidance on technology adoption, helping clients make
+          informed decisions that deliver measurable results and sustainable impact.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 NovaTech. All rights reserved.
+    </footer>
+
+  </main>
+
+</body>
+</html>
