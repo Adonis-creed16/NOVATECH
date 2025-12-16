@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About NOVATECH</title>
+
+  <style>
+    :root {
+      --glass-bg: rgba(255, 255, 255, 0.08);
+      --glass-border: rgba(255, 255, 255, 0.2);
+      --text-main: #ffffff;
+      --text-muted: rgba(255, 255, 255, 0.8);
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      filter: grayscale(100%);
+    }
+
+    header {
+      margin-top: 70px;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    header h1 {
+      font-size: 48px;
+      letter-spacing: 5px;
+      margin-bottom: 12px;
+    }
+
+    header p {
+      max-width: 720px;
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    main {
+      width: 90%;
+      max-width: 1100px;
+      margin-top: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .glass {
+      background: var(--glass-bg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 20px;
+      padding: 40px;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    }
+
+    .glass h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .glass p {
+      line-height: 1.8;
+      color: var(--text-muted);
+      font-size: 16px;
+    }
+
+    ul {
+      padding-left: 20px;
+      color: var(--text-muted);
+    }
+
+    ul li {
+      margin-bottom: 10px;
+      line-height: 1.7;
+    }
+
+    footer {
+      margin-top: 80px;
+      width: 100%;
+      text-align: center;
+      padding: 18px;
+      background: rgba(0,0,0,0.7);
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    a {
+      color: #ffffff;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 34px;
+      }
+      .glass {
+        padding: 28px;
+      }
+    }
+    img{
+      margin-top: 20px;
+      border-radius: 10px;
+      border: 1px solid var(--glass-border);
+      height: 150px;
+      width: 150px
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img src="Nike Fit ADV [2021] Global Brand Campaign Designed….jpg" alt=""><h1>NOVATECH</h1>
+    <p>
+      NOVATECH delivers scalable, secure, and forward-thinking technology solutions
+      designed to move businesses faster and smarter.
+    </p>
+  </header>
+
+  <main>
+
+    <section class="glass">
+      <h2>Our Story</h2>
+      <p>
+        NOVATECH was founded with a singular objective: build technology that
+        eliminates friction, accelerates growth, and creates measurable business
+        impact. What began as a focused engineering team evolved into a global
+        technology partner.
+      </p>
+    </section>
+
+    <section class="glass">
+      <h2>Our Values</h2>
+      <ul>
+        <li><strong>Innovation:</strong> We design for what’s next, not what’s safe.</li>
+        <li><strong>Execution:</strong> Strategy is useless without delivery.</li>
+        <li><strong>Integrity:</strong> Trust is built through consistency.</li>
+        <li><strong>Partnership:</strong> We succeed when our clients win.</li>
+      </ul>
+    </section>
+
+    <section class="glass">
+      <h2>Our Team</h2>
+      <p>
+        Our people are engineers, designers, analysts, and operators who thrive on
+        solving complex problems with precision and accountability.
+      </p>
+    </section>
+
+    <section class="glass">
+      <h2>Careers</h2>
+      <p>
+        We hire individuals who think critically, execute decisively, and take
+        ownership. If that describes you, there’s a seat at the table.
+      </p>
+      <p>
+        Explore opportunities <a href="#">here</a>.
+      </p>
+    </section>
+
+    <section class="glass">
+      <h2>Sustainability</h2>
+      <p>
+        NOVATECH prioritizes responsible innovation, operational efficiency, and
+        sustainable growth practices that align technology with long-term impact.
+      </p>
+    </section>
+
+    <section class="glass">
+      <h2>Contact</h2>
+      <p>
+        Email: info@novatech.com<br>
+        Phone: +1 (800) 555-1234
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2025 NOVATECH — All Rights Reserved
+  </footer>
+
+</body>
+</html>
