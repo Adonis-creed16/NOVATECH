@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,183 +7,204 @@
 
   <style>
     :root {
-      --glass-bg: rgba(255, 255, 255, 0.08);
-      --glass-border: rgba(255, 255, 255, 0.2);
-      --text-main: #ffffff;
-      --text-muted: rgba(255, 255, 255, 0.8);
+      --bg-start: #071226;
+      --bg-end: #0f1724;
+      --accent: #00d4ff;
+      --glass-bg: rgba(255,255,255,0.04);
+      --glass-border: rgba(255,255,255,0.06);
+      --text-main: #e6f7ff;
+      --muted: rgba(230,247,255,0.7);
     }
 
-    * {
-      box-sizing: border-box;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-
+    * { box-sizing: border-box; }
+    html,body { height: 100%; }
     body {
       margin: 0;
       min-height: 100vh;
-      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       color: var(--text-main);
+      background: linear-gradient(180deg,var(--bg-start),var(--bg-end));
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
       display: flex;
       flex-direction: column;
       align-items: center;
-      filter: grayscale(100%);
+      gap: 40px;
     }
 
-    header {
-      margin-top: 70px;
-      text-align: center;
-      padding: 0 20px;
-    }
+    .container { width: 90%; max-width: 1100px; margin: 0 auto; }
 
-    header h1 {
-      font-size: 48px;
-      letter-spacing: 5px;
-      margin-bottom: 12px;
-    }
-
-    header p {
-      max-width: 720px;
-      font-size: 18px;
-      opacity: 0.9;
-    }
-
-    main {
-      width: 90%;
-      max-width: 1100px;
-      margin-top: 60px;
-      display: flex;
-      flex-direction: column;
-      gap: 60px;
-    }
-
-    .glass {
-      background: var(--glass-bg);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-radius: 20px;
-      padding: 40px;
-      border: 1px solid var(--glass-border);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-    }
-
-    .glass h2 {
-      font-size: 32px;
-      margin-bottom: 15px;
-    }
-
-    .glass p {
-      line-height: 1.8;
-      color: var(--text-muted);
-      font-size: 16px;
-    }
-
-    ul {
-      padding-left: 20px;
-      color: var(--text-muted);
-    }
-
-    ul li {
-      margin-bottom: 10px;
-      line-height: 1.7;
-    }
-
-    footer {
-      margin-top: 80px;
+    .site-header {
       width: 100%;
-      text-align: center;
-      padding: 18px;
-      background: rgba(0,0,0,0.7);
-      font-size: 14px;
-      letter-spacing: 1px;
+      padding: 22px 0;
+      background: linear-gradient(90deg, rgba(255,255,255,0.02), transparent);
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      position: sticky; top: 0; backdrop-filter: blur(6px);
+      z-index: 20;
     }
 
-    a {
-      color: #ffffff;
-      font-weight: 600;
-      text-decoration: underline;
-    }
+    .header-inner { display:flex; align-items:center; justify-content:space-between; gap:20px; }
 
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 34px;
-      }
-      .glass {
-        padding: 28px;
-      }
-    }
-    img{
-      margin-top: 20px;
-      border-radius: 10px;
-      border: 1px solid var(--glass-border);
-      height: 150px;
-      width: 150px
-    }
+    .logo { display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:2px; }
+    .logo svg { width:36px; height:36px; fill: var(--accent); border-radius:6px; }
+
+    .nav-links a { color:var(--muted); text-decoration:none; margin-left:18px; font-weight:600; }
+    .nav-links a:hover { color:var(--text-main); text-decoration:underline; }
+
+    .hero { display:flex; gap:36px; align-items:center; padding:48px 0; }
+    .hero-text { flex:1; }
+    .hero-text h1 { font-size: clamp(28px, 4.5vw, 48px); margin:0 0 12px; line-height:1.05; }
+    .lead { color:var(--muted); margin-bottom:18px; font-size:1.05rem; }
+
+    .cta { display:flex; gap:12px; }
+    .btn { display:inline-block; padding:10px 16px; border-radius:10px; text-decoration:none; font-weight:700; }
+    .btn.primary { background: linear-gradient(90deg,var(--accent), #8ef0ff); color:#022; }
+    .btn.ghost { background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--muted); }
+
+    .hero-visual img { width:360px; max-width:40vw; border-radius:16px; box-shadow: 0 10px 30px rgba(0,0,0,0.6); border:1px solid rgba(255,255,255,0.03); }
+
+    main { width:100%; padding: 0 0 60px; }
+
+    .glass { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+              backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+              border-radius: 14px; padding:28px; border:1px solid var(--glass-border); color:var(--muted); }
+
+    .glass h2 { color:var(--text-main); margin:0 0 12px; font-size:24px; }
+
+    .values-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:6px; }
+    .value { padding:14px; border-radius:10px; background: rgba(255,255,255,0.02); }
+    .value strong { color:var(--text-main); display:block; margin-bottom:6px; }
+
+    .team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:12px; }
+    .member { background: rgba(0,0,0,0.25); border-radius:12px; padding:18px; text-align:center; transition:transform .22s ease, box-shadow .22s ease; }
+    .member:hover { transform:translateY(-6px); box-shadow:0 12px 30px rgba(0,0,0,0.6); }
+    .member img { width:88px; height:88px; border-radius:50%; object-fit:cover; display:block; margin:0 auto 10px; border:2px solid rgba(255,255,255,0.04); }
+    .member h3 { margin:8px 0 2px; color:var(--text-main); }
+    .member p { margin:0; color:var(--muted); font-size:0.95rem; }
+
+    .careers { display:flex; gap:18px; align-items:center; justify-content:space-between; }
+    .careers .cta { margin:0; }
+
+    footer { width:100%; padding:20px 0; text-align:center; color:var(--muted); font-size:0.9rem; border-top:1px solid rgba(255,255,255,0.02); }
+
+    /* Responsive */
+    @media (max-width:900px) { .values-grid { grid-template-columns:repeat(2,1fr);} .team-grid { grid-template-columns:repeat(2,1fr);} .hero { flex-direction:column; } .hero-visual img { max-width:100%; } }
+    @media (max-width:560px) { .values-grid { grid-template-columns:1fr;} .team-grid { grid-template-columns:1fr; } .nav-links { display:none; } }
+
+    /* Simple reveal animation */
+    .reveal { opacity:0; transform:translateY(8px); transition:opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+
   </style>
 </head>
 
 <body>
 
-  <header>
-    <img src="Nike Fit ADV [2021] Global Brand Campaign Designed….jpg" alt=""><h1>NOVATECH</h1>
-    <p>
-      NOVATECH delivers scalable, secure, and forward-thinking technology solutions
-      designed to move businesses faster and smarter.
-    </p>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/></svg>
+        <span>NOVATECH</span>
+      </div>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="#careers">Careers</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <div class="container hero">
+      <div class="hero-text">
+        <h1>Designing technology that accelerates growth</h1>
+        <p class="lead">Scalable, secure, and forward-thinking solutions that move businesses faster and smarter.</p>
+        <div class="cta">
+          <a class="btn primary" href="#contact">Get in touch</a>
+          <a class="btn ghost" href="#careers">See careers</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1542744095-291d1f67b221?q=80&w=1200&auto=format&fit=crop&crop=entropy&cs=tinysrgb" alt="Abstract technology artwork">
+      </div>
+    </div>
   </header>
 
   <main>
 
-    <section class="glass">
+    <section id="about" class="glass reveal">
       <h2>Our Story</h2>
       <p>
-        NOVATECH was founded with a singular objective: build technology that
-        eliminates friction, accelerates growth, and creates measurable business
-        impact. What began as a focused engineering team evolved into a global
-        technology partner.
+        NOVATECH was founded to remove friction between ideas and outcomes. We
+        partner with ambitious teams to design and build secure, scalable
+        systems that deliver measurable results and lasting impact.
       </p>
     </section>
 
-    <section class="glass">
+    <section id="values" class="glass reveal">
       <h2>Our Values</h2>
-      <ul>
-        <li><strong>Innovation:</strong> We design for what’s next, not what’s safe.</li>
-        <li><strong>Execution:</strong> Strategy is useless without delivery.</li>
-        <li><strong>Integrity:</strong> Trust is built through consistency.</li>
-        <li><strong>Partnership:</strong> We succeed when our clients win.</li>
-      </ul>
+      <div class="values-grid">
+        <div class="value">
+          <strong>Innovation</strong>
+          We pursue meaningful breakthroughs, not shortcuts.
+        </div>
+        <div class="value">
+          <strong>Execution</strong>
+          We move from strategy to reliable delivery with speed and clarity.
+        </div>
+        <div class="value">
+          <strong>Integrity</strong>
+          We communicate honestly, own outcomes, and build trust.
+        </div>
+      </div>
     </section>
 
-    <section class="glass">
+    <section id="team" class="glass reveal">
       <h2>Our Team</h2>
-      <p>
-        Our people are engineers, designers, analysts, and operators who thrive on
-        solving complex problems with precision and accountability.
-      </p>
+      <div class="team-grid">
+        <article class="member">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&crop=faces&cs=tinysrgb" alt="Jane Doe">
+          <h3>Jane Doe</h3>
+          <p>Head of Engineering</p>
+        </article>
+        <article class="member">
+          <img src="https://images.unsplash.com/photo-1545996124-1f6a6b1b38b1?q=80&w=800&auto=format&fit=crop&crop=faces&cs=tinysrgb" alt="Amir Khan">
+          <h3>Amir Khan</h3>
+          <p>Product Lead</p>
+        </article>
+        <article class="member">
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop&crop=faces&cs=tinysrgb" alt="Lina Gomez">
+          <h3>Lina Gomez</h3>
+          <p>Design Director</p>
+        </article>
+      </div>
     </section>
 
-    <section class="glass">
-      <h2>Careers</h2>
-      <p>
-        We hire individuals who think critically, execute decisively, and take
-        ownership. If that describes you, there’s a seat at the table.
-      </p>
-      <p>
-        Explore opportunities <a href="#">here</a>.
-      </p>
+    <section id="careers" class="glass reveal careers">
+      <div>
+        <h2>Careers</h2>
+        <p>
+          We hire people who are curious, accountable, and passionate about
+          building great products. Join us and help shape the future.
+        </p>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="#contact">See open roles</a>
+      </div>
     </section>
 
-    <section class="glass">
+    <section id="sustainability" class="glass reveal">
       <h2>Sustainability</h2>
       <p>
-        NOVATECH prioritizes responsible innovation, operational efficiency, and
-        sustainable growth practices that align technology with long-term impact.
+        We prioritize efficient, long-term solutions that consider environmental
+        and social impact as we scale products and platforms.
       </p>
     </section>
 
-    <section class="glass">
+    <section id="contact" class="glass reveal">
       <h2>Contact</h2>
       <p>
-        Email: info@novatech.com<br>
+        Email: <a href="mailto:info@novatech.com">info@novatech.com</a><br>
         Phone: +1 (800) 555-1234
       </p>
     </section>
@@ -193,6 +214,23 @@
   <footer>
     © 2025 NOVATECH — All Rights Reserved
   </footer>
+
+  <script>
+    // Smooth scroll and reveal-on-scroll
+    document.documentElement.style.scrollBehavior = 'smooth';
+    document.addEventListener('DOMContentLoaded', function(){
+      const sections = document.querySelectorAll('.reveal');
+      const obs = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      sections.forEach(s => obs.observe(s));
+    });
+  </script>
 
 </body>
 </html>
